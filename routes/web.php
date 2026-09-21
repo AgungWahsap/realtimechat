@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Volt::route('/login', 'login')->name('login');
+
+Volt::route('/', 'chat-room')->middleware('auth')->name('chat');
